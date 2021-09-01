@@ -1,0 +1,20 @@
+body{
+    background: #1e222d;
+}
+
+#loginRow{
+    position: absolute;
+    top:30%;
+    width:100%;
+}
+
+#loginDiv{
+    border: 2px solid #5c636a;
+    background: #131722;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.btn{
+    height: 38px;
+}

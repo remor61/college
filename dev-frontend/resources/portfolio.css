@@ -1,0 +1,62 @@
+body{
+    background: #131722;
+}
+
+#header{
+    background: #1e222d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.coin{
+    color: white;
+    font-style: normal;
+}
+
+h4{
+    color: white;
+}
+
+h1{
+    color:rgb(64, 255, 47);
+}
+p{
+    color: white;
+}
+.currency{
+    font-style: italic;
+    color: #b1b1b1;
+}
+
+.divHover:hover{
+    padding-top:1rem;
+    border-radius: 15px;
+    background-color: rgba(172, 236, 255, 0.493);
+}
+
+.pnl{
+    border: 2px solid rgb(64, 255, 47);
+    border-radius: 10px;
+    background-color: rgba(62,255,74,0.5);
+    padding:5px;
+    color: white;
+}
+
+#pnlChart{
+    height:400px;
+    color:white;
+}
+
+.footerColor{
+    color:rgb(200, 199, 199);
+    width: 100%;
+    text-align:center;
+}

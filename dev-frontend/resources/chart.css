@@ -1,0 +1,30 @@
+body{
+    background: #131722;
+}
+#header{
+    background: #1e222d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+a:active{
+    text-decoration-color: rgb(3, 251, 255);
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+h2{
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.footerColor{
+    color:rgb(200, 199, 199);
+    width: 100%;
+    text-align:center;
+}

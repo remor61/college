@@ -1,0 +1,40 @@
+body{
+    background: #131722;
+}
+
+#header{
+    background: #1e222d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+h2{
+    color: white;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#divMarket{
+    min-height:385px;
+}
+
+#marketOverview{
+    max-height: 350px;
+}
+
+#divChart{
+    min-height: 500px;
+    padding-bottom: 2.5rem;
+}
+
+.footerColor{
+    color:rgb(200, 199, 199);
+    width: 100%;
+    text-align:center;
+}

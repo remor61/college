@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <link rel="shortcut icon" type="image/ico" href="../resources/img/favicon.ico">
+  <link rel="stylesheet" href="../resources/home.css">
+  <title>Home | Crypto House</title>
+</head>
+
+<body>
+  <div class="container" id="header">
+    <header class="blog-header p-2">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1"></div>
+        <div class="col-4 text-center">
+          <img src="../resources/img/dogelogo.png" height="100px">
+          <h3 class="blog-header-logo text-light mt-2" href="#">Crypto House</h3>
+        </div>
+        <div class="col-4">
+        </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2 headerColor position-sticky" style="top:1.5rem;">
+      <nav class="nav d-flex justify-content-center">
+        <a class="p-2 link-light" href="#">Home</a>
+        <a class="p-2 link-light" href="portfolio.html">Portfolio</a>
+        <a class="p-2 link-light" href="chart.html">Live Chart</a>
+      </nav>
+    </div>
+  </div>
+  <div class="container" id="content">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10 col-md-12 col-sm-12" id="divMarket">
+        <h2>Market Overview</h2>
+        <div class="tradingview-widget-container" id="marketOverview">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a
+              href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener"
+              target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+            async>
+              {
+                "width": "100%",
+                  "height": "100%",
+                    "defaultColumn": "overview",
+                      "screener_type": "crypto_mkt",
+                        "displayCurrency": "USD",
+                          "colorTheme": "dark",
+                            "locale": "en"
+              }
+            </script>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10 col-md-12 col-sm-12" id="divChart">
+        <h2>History Chart</h2>
+        <div class="tradingview-widget-container">
+          <div id="tradingview_5ffc9"></div>
+          <div class="tradingview-widget-copyright"><a
+              href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span
+                class="blue-text">Bitcoin</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+          <script type="text/javascript">
+            new TradingView.MediumWidget(
+              {
+                "symbols": [
+                  [
+                    "Bitcoin",
+                    "BINANCE:BTCUSDT|3M"
+                  ],
+                  [
+                    "Ethereum",
+                    "BINANCE:ETHUSDT|3M"
+                  ],
+                  [
+                    "Cardano",
+                    "BINANCE:ADAUSDT|3M"
+                  ],
+                  [
+                    "Binance Coin",
+                    "BINANCE:BNBUSDT|3M"
+                  ],
+                  [
+                    "XRP",
+                    "BINANCE:XRPUSDT|12M"
+                  ],
+                  [
+                    "Dogecoin",
+                    "BINANCE:DOGEUSDT|12M"
+                  ]
+                ],
+                "chartOnly": false,
+                "width": "100%",
+                "height": "100%",
+                "locale": "en",
+                "colorTheme": "dark",
+                "gridLineColor": "rgba(42 ,46, 57, 0)",
+                "trendLineColor": "#2962FF",
+                "fontColor": "#787B86",
+                "underLineColor": "rgba(41, 98, 255, 0.3)",
+                "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                "isTransparent": false,
+                "autosize": true,
+                "showFloatingTooltip": false,
+                "container_id": "tradingview_5ffc9"
+              }
+            );
+          </script>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10 col-md-12 col-sm-12">
+        <h2>Links</h2>
+        <a class="p-2 link-light" target="_blank" rel="noreferrer noopener" href="https://coinmarketcap.com/homepage-v21/">CoinMarketCap</a><br>
+        <a class="p-2 link-light" target="_blank" rel="noreferrer noopener" href="https://www.tradingview.com/">TradingView</a><br>
+        <a class="p-2 link-light" target="_blank" rel="noreferrer noopener" href="https://www.coindesk.com/">CoinDesk</a><br>
+        <a class="p-2 link-light" target="_blank" rel="noreferrer noopener" href="https://www.investing.com/news/cryptocurrency-news">Investing</a><br>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="mt-5">
+        <p class="footerColor">
+            Created by
+            <a class="link-light" href="https://github.com/remor61" target="_blank" rel="noreferrer noopener">
+                Eduardo Remor.
+            </a>
+        </p>
+    </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
