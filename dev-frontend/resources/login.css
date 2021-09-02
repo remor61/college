@@ -2,10 +2,8 @@ body{
     background: #1e222d;
 }
 
-#loginRow{
-    position: absolute;
-    top:30%;
-    width:100%;
+.row{
+    min-height: 100vh;
 }
 
 #loginDiv{
