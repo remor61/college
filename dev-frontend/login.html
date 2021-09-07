@@ -18,21 +18,22 @@
             <div class="col-lg-4 col-md-3 col-sm-1"></div>
             <div class="col-lg-4 col-md-6 col-sm-10" id="loginDiv">
                     <div class="form-floating mb-3">
-                        <input class="form-control" name="email" type="email" placeholder="name@example.com" />
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" />
                         <label for="emailInput">Email address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input class="form-control" name="password" type="password" placeholder="Password" />
+                        <input class="form-control" id="password" type="password" placeholder="Password" />
                         <label for="passowordInput">Password</label>
                     </div>
                     <div class="col-6 mx-auto gap-2 d-grid">
-                        <a class="btn btn-secondary" type="submit" href="home.html">Log In</a>
+                        <a class="btn btn-secondary" type="submit" onclick="validateEmail(document.getElementById('email').value,document.getElementById('password').value)">Log In</a>
                     </div>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-1"></div>
         </div>
     </div>
 
+    <script type="text/javascript" src="../scripts/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>

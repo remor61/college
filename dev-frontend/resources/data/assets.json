@@ -1,0 +1,38 @@
+{
+    "bitcoin":
+    {
+        "entry_date": "09/06/2021",
+        "average_price": 35290.51,
+        "quantity": 0.14168115
+    },
+    "ethereum":
+    {
+        "entry_date": "22/06/2021",
+        "average_price": 1886.72,
+        "quantity": 2.65010176
+    },
+    "cardano":
+    {
+        "entry_date": "21/07/2021",
+        "average_price": 1.082,
+        "quantity": 4621.07
+    },
+    "binance_coin":
+    {
+        "entry_date": "20/05/2021",
+        "average_price": 378.2,
+        "quantity": 13.2205
+    },
+    "XRP":
+    {
+        "entry_date": "12/052021",
+        "average_price": 1.2863,
+        "quantity": 3887.118
+    },
+    "dogecoin":
+    {
+        "entry_date": "21/05/2021",
+        "average_price": 0.3770,
+        "quantity": 13262.599
+    }
+}

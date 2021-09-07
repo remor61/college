@@ -25,6 +25,11 @@ h4{
     color: white;
 }
 
+h2{
+    text-align: center; 
+    color:white;
+}
+
 h1{
     color:rgb(64, 255, 47);
 }
@@ -50,7 +55,7 @@ p{
     color: white;
 }
 
-#pnlChart{
+.chart{
     height:400px;
     color:white;
 }

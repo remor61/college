@@ -10,6 +10,7 @@
 
     <link rel="shortcut icon" type="image/ico" href="../resources/img/favicon.ico">
     <link rel="stylesheet" href="../resources/portfolio.css">
+    <script type="text/javascript" src="../scripts/portifolio.js"></script>
     <title>Home | Crypto House</title>
 </head>
 
@@ -37,7 +38,7 @@
         <div class="row">
             <div class="col-2">
                 <h4>Assets</h4>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('btcChart')">
                     <div class="col-3 m">
                         <img src="../resources/img/btc.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -47,7 +48,7 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('ethChart')">
                     <div class="col-3 m">
                         <img src="../resources/img/eth.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -57,7 +58,7 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('adaChart')">
                     <div class="col-3 m">
                         <img src="../resources/img/ada.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -67,7 +68,7 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('bnbChart')">
                     <div class="col-3 m">
                         <img src="../resources/img/bnb.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -77,7 +78,7 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('xrpChart')">
                     <div class="col-3 m">
                         <img src="../resources/img/xrp.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -87,7 +88,7 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row divHover">
+                <div class="row divHover" onclick="getChart('dogeChart')">
                     <div class="col-3">
                         <img src="../resources/img/doge.png" height="45px" style="margin-top:2px;">
                     </div>
@@ -97,21 +98,97 @@
                         <p>USD 10.000,00</p>
                     </div>
                 </div>
-                <div class="row mt-2">
+                <div class="row mt-1">
                     <div class="col-12">
+                        <a type="button" class="btn w-100 btn-secondary mb-3" onclick="getChart('pnlChart')">Overview</a>
                         <div class="btn-group-vertical d-flex" role="group">
-                            <a type="button" class="btn btn-outline-success w-100">Add</a>
-                            <a type="button" class="btn btn-outline-danger w-100">Remove</a>
+                            <a type="button" class="btn btn-outline-success w-100" onclick="hideNetWorth('addAsset')">Add</a>
+                            <a type="button" class="btn btn-outline-danger w-100" onclick="hideNetWorth('removeAsset')">Remove</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-10">
-                <h4>Net Worth</h4>
-                <h1>USD 60.000,00</h1>
-                <em class="pnl">UP 294,15%</em>
-                <div class="border mt-3" id="pnlChart">
-                    Chart with portifolio PNL. Will be added in next module.
+            <div class="col-10 chartInterchange" id="netWorth" style="display:block;">
+                <div id="pnl">
+                    <h4>Net Worth</h4>
+                    <h1>USD 60.000,00</h1>
+                    <em class="pnl">294,15%</em>
+                </div>
+                <div id="pnlcoin" style="display:none;">
+                    <h4>Net Worth COIN</h4>
+                    <h1>USD 10.000,00</h1>
+                    <em class="pnl">294,15%</em>
+                </div>
+                <div class="border mt-3 chart" id="pnlChart" style="display:block;">
+                    Chart with portifolio PNL. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="btcChart" style="display:none;">
+                    BTC chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="ethChart" style="display:none;">
+                    ETH chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="adaChart" style="display:none;">
+                    ADA chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="bnbChart" style="display:none;">
+                    BNB chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="xrpChart" style="display:none;">
+                    XRP chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+                <div class="border mt-3 chart" id="dogeChart" style="display:none;">
+                    DOGE chart. Will be added in next module as it will get data from JSON or somewhere else, I'll have to check how I'm going to generate this chart..
+                </div>
+            </div>
+            <div class="col-10 chartInterchange" id="addAsset" style="display:none;">
+                <div class="row h-100 align-items-center">
+                    <div class="col-lg-4 col-md-3 col-sm-1"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-10" id="loginDiv">
+                            <h2>Add Asset</h2>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="currency" placeholder="Currency"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">USD</span>
+                                <input type="text" class="form-control" id="avgPrice" placeholder="Average Price"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">QTY</span>
+                                <input type="text" class="form-control" id="addQty" placeholder="Quantity"/>
+                            </div>
+                            <div class="col-6 mx-auto gap-2 d-grid btn-group d-flex w-100">
+                                <a class="btn btn-outline-secondary" type="button" onclick="cancel('removeAsset')">Cancel</a>
+                                <a class="btn btn-success w-50" type="button" onclick="add(document.getElementById('avgPrice').value,document.getElementById('addQty').value)">Add</a>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-1"></div>
+                </div>
+            </div>
+            <div class="col-10 chartInterchange" id="removeAsset" style="display:none;">
+                <div class="row h-100 align-items-center">
+                    <div class="col-lg-4 col-md-3 col-sm-1"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-10" id="loginDiv">
+                            <h2>Remove Asset</h2>
+                            <select class="form-select mb-3">
+                                <option selected>Please select the asset to be removed</option>
+                                <option value="BTC">Bitcoin</option>
+                                <option value="ETH">Ethereum</option>
+                                <option value="ADA">Cardano</option>
+                                <option value="BNB">Binance Coin</option>
+                                <option value="XRP">XRP</option>
+                                <option value="DOGE">Dogecoin</option>
+                            </select>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">QTY</span>
+                                <input type="text" class="form-control" id="removeQty" placeholder="Quantity"/>
+                            </div>
+                            <div class="col-6 mx-auto gap-2 d-grid btn-group d-flex w-100">
+                                <a class="btn btn-outline-secondary" type="button" onclick="cancel('removeAsset')">Cancel</a>
+                                <a class="btn btn-danger w-50" type="button" onclick="remove(document.getElementById('removeQty').value)">Remove</a>
+                            </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-1"></div>
                 </div>
             </div>
         </div>
