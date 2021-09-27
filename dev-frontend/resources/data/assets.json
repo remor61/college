@@ -1,38 +1,60 @@
-{
-    "bitcoin":
+[
     {
+        "currency": "Bitcoin",
+        "sign": "BTC",
         "entry_date": "09/06/2021",
         "average_price": 35290.51,
-        "quantity": 0.14168115
+        "current_price": 44568.77,
+        "quantity": 0.14168115,
+        "img_path": "../resources/img/btc.png"
     },
-    "ethereum":
     {
+        "currency": "Ethereum",
+        "sign": "ETH",
         "entry_date": "22/06/2021",
         "average_price": 1886.72,
-        "quantity": 2.65010176
+        "current_price": 3145.52,
+        "quantity": 2.65010176,
+        "img_path": "../resources/img/eth.png"
+
     },
-    "cardano":
     {
+        "currency": "Cardano",
+        "sign": "ADA",
         "entry_date": "21/07/2021",
         "average_price": 1.082,
-        "quantity": 4621.07
+        "current_price": 2.268,
+        "quantity": 4621.07,
+        "img_path": "../resources/img/ada.png"
+
     },
-    "binance_coin":
     {
+        "currency": "Binance Coin",
+        "sign": "BNB",
         "entry_date": "20/05/2021",
         "average_price": 378.2,
-        "quantity": 13.2205
+        "current_price": 381.9,
+        "quantity": 13.2205,
+        "img_path": "../resources/img/bnb.png"
+
     },
-    "XRP":
     {
-        "entry_date": "12/052021",
+        "currency": "XRP",
+        "sign": "XRP",
+        "entry_date": "12/05/2021",
         "average_price": 1.2863,
-        "quantity": 3887.118
+        "current_price": 0.9948,
+        "quantity": 3887.118,
+        "img_path": "../resources/img/xrp.png"
+
     },
-    "dogecoin":
     {
+        "currency": "Dogecoin",
+        "sign": "DOGE",
         "entry_date": "21/05/2021",
         "average_price": 0.3770,
-        "quantity": 13262.599
+        "current_price": 0.2229,
+        "quantity": 13262.599,
+        "img_path": "../resources/img/doge.png"
     }
-}
+]

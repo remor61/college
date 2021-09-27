@@ -16,7 +16,7 @@ a:hover{
     text-decoration: underline;
 }
 
-.coin{
+.currency{
     color: white;
     font-style: normal;
 }
@@ -36,7 +36,7 @@ h1{
 p{
     color: white;
 }
-.currency{
+.sign{
     font-style: italic;
     color: #b1b1b1;
 }
@@ -57,11 +57,27 @@ p{
 
 .chart{
     height:400px;
-    color:white;
 }
 
 .footerColor{
     color:rgb(200, 199, 199);
     width: 100%;
     text-align:center;
+}
+
+.imgGraph{
+    height: 400px;
+    width: 100%;
+    max-width: 1076px;
+}
+.negative{
+    border: 2px solid rgb(255, 4, 0);
+    border-radius: 10px;
+    background-color: rgba(255, 62, 62, 0.5);
+    padding:5px;
+    color: white;
+}
+
+.negativeUSD{
+    color: red;
 }
