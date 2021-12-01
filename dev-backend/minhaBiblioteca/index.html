@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <link href="biblioteca.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="biblioteca.js"></script>
+
+    <title>MinhaBiblioteca</title>
+</head>
+
+<body onload="start()">
+    <ul class="nav justify-content-center">
+        <h1>MinhaBiblioteca</h1>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="book_id" class="form-label">Nome do Livro</label>
+                        <input type="text" class="form-control" id="book_id" name="book">
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" id="author_id" name="author">
+                            <option selected value="-1">Autor</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" id="publication_year_id" name="publication_year">
+                            <option selected value="-1">Ano de Publicação</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-dark w-100" onClick="searchBooks()">Consultar</button>
+                </form>
+
+                <div class="row mt-3">
+                    <table border=0 cellpadding=0 cellspacing=0 id="table_books" hidden>
+                        <tr>
+                            <td></td>
+                            <td width=180><b>Livro</b></td>
+                            <td width=180><b>Autor</b></td>
+                            <td width=180><b>Ano</b></td>
+                            <td width=180><b>Editora</b></td>
+                            <td width=180><b>Exemplares</b></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <table id="book_table_id" border=0 cellpadding=0 cellspacing=0></table>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-success" onclick="showAddForm()">Adicionar Livro</button>
+                        <button type="button" class="btn btn-danger" onclick="showDeleteForm()">Remover Livro</button>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-10"></div>
+                    <form class="border border-danger border-3 rounded" id="form_delete" hidden>
+                        <select class="form-select mb-3 mt-3" id="books_select">
+                        </select>
+                        <button type="button" class="btn btn-danger w-100 mb-3" onclick="deleteBook()">Remover</button>
+                    </form>
+                    <form class="border border-success border-3 rounded" id="form_add" hidden>
+
+                        <div class="btn-group w-100" role="group" id="btn_group_add" hidden>
+                            <button type="button" class="btn btn-dark" onclick="addExistingBook()">Livro
+                                existente</button>
+                            <button type="button" class="btn btn-secondary" onclick="addNewBook()">Novo Livro</button>
+                        </div>
+
+                        <div id="add_existing_div" hidden>
+                            <select class="form-select mb-3 mt-3" id="books_select_add"></select>
+                            <button id="add_qty_btn" type="button" class="btn btn-success w-100 mb-3"
+                                onclick="addBookQty()">Adicionar</button>
+
+                        </div>
+
+                        <div id="add_new_div" hidden>
+                            <div class="mb-3">
+                                <label for="add_book_id" class="form-label">Nome do Livro</label>
+                                <input type="text" class="form-control" id="add_book_id">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add_author_id" class="form-label">Autor</label>
+                                <select class="form-select" id="add_author_id" name="author"></select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="add_year_id" class="form-label">Ano de publicação</label>
+                                <input type="number" class="form-control" id="add_year_id">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add_publisher_id" class="form-label">Editora</label>
+                                <select class="form-select" id="add_publisher_id" name="author"></select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="add_qty_id" class="form-label">Quantidade de exemplares</label>
+                                <input type="number" class="form-control" id="add_qty_id">
+                            </div>
+                            <button id="add_new_btn" type="button" class="btn btn-success w-100 mb-3"
+                                onclick="addBook()">Adicionar</button>
+                        </div>
+
+                    </form>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row my-5 position-relative">
+                    <button type="button" class="btn btn-primary w-50 position-absolute top-0 start-50 translate-middle"
+                        onClick="showAddUser()">Adicionar Usuário</button>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-10"></div>
+                    <form class="border border-primary border-3 rounded" id="form_add_user" hidden>
+                        <div class="mb-3">
+                            <label for="add_username_id" class="form-label">Nome do Usuário</label>
+                            <input type="text" class="form-control" id="add_username_id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="add_address_id" class="form-label">Endereço do Usuário</label>
+                            <input type="text" class="form-control" id="add_address_id"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="add_cpf_id" class="form-label">CPF do Usuário</label>
+                            <input type="text" class="form-control" id="add_cpf_id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="add_birthdate_id" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="add_birthdate_id"/>
+                        </div>
+                        <button id="add_new_btn" type="button" class="btn btn-primary w-100 mb-3"
+                            onclick="addUser()">Adicionar</button>
+                    </form>
+                    <div class="col-1"></div>
+                </div>
+
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
