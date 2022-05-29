@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="row mb-3 mt-5">
+    <div class="col-lg"></div>
+    <div class="col-lg">
+
+      <button type="button" id="btnVacina" class="btn btn-dark w-100" onClick="showFormVacina()">Cadastrar Vacina</button>
+
+      <div class="row mb-2" id="cadastroVacina" style="display:none">
+        <form name="vacina">
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" name="marca" id="marca" placeholder="Marca">
+          </div>
+          <div class="form-group">
+            <label for="lote">Lote</label>
+            <input type="text" class="form-control" name="lote" id="lote" placeholder="Lote">
+          </div>
+          <button type="button" class="btn btn-danger mt-3" onClick="cancelVacina()">Cancelar</button>
+          <input type="submit" name='btnSubmit' id='btnSubmit' value='Salvar' class="btn btn-success mt-3"></input>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-lg"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg"></div>
+    <div class="col-lg">
+
+      <button type="button" id="btnEstoque" class="btn btn-dark w-100" onClick="showTableEstoque()">Estoque</button>
+
+      <div class="row mt-3" id="tableEstoque" style="display:none">
+        <table>
+          <tr>
+              <td>Marca</td>
+              <td>Quantidade</td>
+              <td>--</td>
+          </tr>
+          {{#data}}
+              <tr>
+                  <td>{{marca}}</td>
+                  <td>{{quantidade}}</td>
+                  <td>
+                      <a href='update'><img src="/img/Edite.png"></a>
+                      <a href='deletar'><img src='/img/Lixeira.png'></a>
+                  </td>
+              </tr>
+          {{/data}}
+        </table>
+
+        <button type="button" class="btn btn-secondary mt-3" onClick="exitEstoque()">Inicio</button>
+      </div>
+
+    </div>
+    <div class="col-lg"></div>
+  </div>
+</div>
